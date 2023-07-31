@@ -9,16 +9,12 @@ export async function generatePdf(formData) {
     return new Promise((resolve, reject) => {
         const doc = new PDFDocument({ size: 'A4', margin: 30 });
         
-        // Pipe the PDF content to a buffer
         const pdfChunks = [];
         doc.on('data', (chunk) => pdfChunks.push(chunk));
         doc.on('end', () => {
             const pdfBytes = Buffer.concat(pdfChunks);
             resolve(pdfBytes);
         });
-
-        // Create the PDF content
-        doc.pipe(fs.createWriteStream(`mentions_legales.pdf`));
 
         doc.fontSize(20).fillColor('#2F5373').font('fonts/Poppins-Bold.ttf').text('Mentions Légales');
 
