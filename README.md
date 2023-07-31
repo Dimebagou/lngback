@@ -27,21 +27,45 @@ Suivez ces instructions pour obtenir une copie du projet sur votre machine local
 
 ### Installation
 
-1. Clonez le dépôt sur votre machine locale / *Clone the repository to your local machine* :
+#### 1. Clonez le dépôt sur votre machine locale / *Clone the repository to your local machine* :
 
 ````bash
  git clone https://github.com/Dimebagou/lngback.git
  cd lngback
 ````
 
-2. Installez les dépendances / *Install the dependencies* :
+#### 2. Installez les dépendances / *Install the dependencies* :
 
 ````bash
  npm install
 ````
 
+#### 3. Configurez le .env / *Setting up Environment Variables (Gmail)* :
 
-3. Lancez le serveur de développement / *Run the development server* :
+- Pour utiliser la fonctionnalité d'envoi d'e-mails du back-end de Legal Notices Generator (LNG), vous devez configurer les variables d'environnement pour un compte Gmail. Actuellement, l'application est configurée pour fonctionner uniquement avec Gmail.
+
+- *To use the email functionality of the Legal Notices Generator (LNG) back-end, you need to set up environment variables for a Gmail account. Currently, the application is configured to work with Gmail only.*
+
+  Voici comment configurer les variables d'environnement / *Here's how to set up the environment variables* :
+
+
+  ````bash
+   EMAIL=your_gmail_email
+   PASSWORD=your_gmail_password
+  ````
+  Remplacez ton_email_gmail et ton_mot_de_passe_gmail par votre adresse e-mail et mot de passe Gmail réels. Pour assurer un accès sécurisé, veillez à activer l'option "Autoriser les applications moins sécurisées" dans les paramètres Gmail ou utilisez un mot de passe d'application pour l'authentification.
+
+  Remarque : Veuillez faire preuve de prudence lors de l'utilisation de vos identifiants Gmail. Il est recommandé de créer un compte Gmail dédié à cette application pour des raisons de sécurité.
+
+  Le back-end est maintenant prêt à utiliser votre compte Gmail pour envoyer les PDF générés par e-mail.
+
+  *Replace your_gmail_email and your_gmail_password with your actual Gmail email and password. To ensure secure access, make sure to enable "less secure apps" in your Gmail settings or use an app password for authentication.*
+
+  *Note: Please be cautious while using your Gmail credentials. Consider creating a dedicated Gmail account for this purpose to maintain security.*
+
+  *Now, the back-end is ready to use your Gmail account for sending the generated PDFs via email.*
+
+#### 4. Lancez le serveur de développement / *Run the development server* :
 ````bash
  npm start
 ````
